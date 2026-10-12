@@ -1,6 +1,9 @@
-# hosts/vm/home.nix
+# hosts/laptop/home.nix
+{ ... }:
 {
   elg.waybar.enable = true;
   elg.hyprland.enable = true;
   elg.rofi.enable = true;
+
+  xdg.configFile."hypr/host".source = ./hypr;
 }
