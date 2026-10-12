@@ -5,6 +5,6 @@
 
   config = lib.mkIf config.elg.hyprland.enable {
     programs.hyprland.enable = true;
-    programs.hyprlock.enable = true;   # PAM only
+    programs.hyprlock.enable = true;
   };
 }

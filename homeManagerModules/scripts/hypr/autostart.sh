@@ -3,13 +3,13 @@
 #export SSH_AUTH_SOCK
 
 # Start polkit (for password authentication popups)
-@/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+#/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
 # Start proton vpn in tray
 #protonvpn-app &
 
 # Start ckb-next in tray
-ckb-next --background &
+#ckb-next --background &
 
 # Start easyeffects in tray
 #easyeffects -w &
