@@ -7,6 +7,8 @@
     ./rofi.nix
     ./wallpaper.nix
     ./waybar.nix
+    ./swaync.nix
+    ./fonts.nix
   ];
 
   home.stateVersion = "25.05";

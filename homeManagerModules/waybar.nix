@@ -6,7 +6,10 @@
   config = lib.mkIf config.elg.waybar.enable {
     home.packages = with pkgs; [
       waybar
-      # add whatever the modules call, see below (playerctl, pavucontrol, brightnessctl, ...)
+      pavucontrol
+      blueman
+      htop
+      ncdu
     ];
     xdg.configFile."waybar".source = ./config/waybar;
   };

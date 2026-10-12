@@ -50,24 +50,6 @@
     "tooltip-format": "Left: Open clipboard Manager\nRight: Delete an entry\nMiddle: Clear list"
   },
 
-  // Updates Count
-  "custom/updates": {
-    "format": "  {}",
-    "escape": true,
-    "return-type": "json",
-    "exec": "~/.config/elg/scripts/updates.sh",
-    "interval": 1800,
-    "on-click": "$(cat $HOME/.config/elg/settings/terminal.sh) -e ~/.config/elg/scripts/installupdates.sh",
-    "on-click-right": "$(cat $HOME/.config/elg/settings/terminal.sh) -e pacseek"
-  },
-
-  // Keybindings
-  "custom/keybindings": {
-    "format": "",
-    "on-click": "~/.config/hypr/scripts/keybindings.sh",
-    "tooltip": false
-  },
-
   // Rofi Application Launcher
   "custom/appmenu": {
     // START APPS LABEL
@@ -113,7 +95,6 @@
   // Clock
   "clock": {
     "format": "{:%H:%M %a}",
-    "on-click": "r",
     "timezone": "",
     "tooltip": false
   },

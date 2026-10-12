@@ -5,5 +5,6 @@
 
   config = lib.mkIf config.elg.scripts.enable {
     xdg.configFile."elg/scripts".source = ./scripts/elg;
+    xdg.configFile."elg/settings/terminal.sh".text = "kitty";
   };
 }
