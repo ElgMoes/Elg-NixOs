@@ -1,8 +1,9 @@
 # homeManagerModules/waybar.nix
-{ config, lib, ... }:
+{ config, lib, pkgs, ... }:
 {
   options.elg.waybar.enable = lib.mkEnableOption "Waybar";
   config = lib.mkIf config.my.waybar.enable {
-    programs.waybar.enable = true;
+        ome.packages = with pkgs; [ waybar ];
+    xdg.configFile."rofi".source = ./config/waybar;
   };
 }
