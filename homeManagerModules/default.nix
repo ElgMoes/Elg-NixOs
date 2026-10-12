@@ -5,6 +5,7 @@
     ./hyprland.nix
     ./scripts.nix
     ./rofi.nix
+    ./wallpaper.nix
     ./waybar.nix
   ];
 

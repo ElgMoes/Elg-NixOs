@@ -1,0 +1,5 @@
+[2025-10-13 00:12:18.557] [info] Using configuration file /home/ElgMoes/.config/waybar/themes/elg/config
+[2025-10-13 00:12:18.557] [info] Including resource file: ~/.config/waybar/modules.json
+[2025-10-13 00:12:18.559] [info] Discovered appearance 'dark'
+[2025-10-13 00:12:18.559] [info] Using CSS file /home/ElgMoes/.config/waybar/themes/elg/default/style.css
+[2025-10-13 00:12:18.560] [error] style.css:1:30Missing semicolon at end of color definition
