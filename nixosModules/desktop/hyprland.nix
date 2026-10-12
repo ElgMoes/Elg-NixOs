@@ -1,20 +1,10 @@
 # nixosModules/desktop/hyprland.nix
-{ config, lib, pkgs, ... }:
-let
-  cfg = config.my.hyprland;
-in
+{ config, lib, ... }:
 {
-  options.my.hyprland.enable = lib.mkEnableOption "Hyprland desktop";
+  options.elg.hyprland.enable = lib.mkEnableOption "Hyprland session";
 
-  config = lib.mkIf cfg.enable {
+  config = lib.mkIf config.elg.hyprland.enable {
     programs.hyprland.enable = true;
-    programs.hyprlock.enable = true;
-
-    environment.systemPackages = with pkgs; [
-      hyprpicker
-      hyprshot
-      rofi
-      rofimoji
-    ];
+    programs.hyprlock.enable = true;   # PAM only
   };
 }
