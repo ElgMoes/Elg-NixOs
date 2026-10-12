@@ -1,0 +1,214 @@
+/*
+#  ____        __ _  
+# |  _ \ ___  / _(_) 
+# | |_) / _ \| |_| | 
+# |  _ < (_) |  _| | 
+# |_| \_\___/|_| |_| 
+#                    
+# by Stephan Raabe (2023) 
+# ----------------------------------------------------- 
+*/
+
+/* ---- Configuration ---- */
+configuration {
+    modi:                       "drun,filebrowser,window";
+    font:                       "JetBrains Mono 11";
+    show-icons:                 true;
+    display-drun:               "";
+    display-run:                "";
+    display-filebrowser:        "";
+    display-window:             "";
+	drun-display-format:        "{name}";
+    hover-select:               true;
+    scroll-method:              1;
+    me-select-entry:            "";
+    me-accept-entry:            "MousePrimary";
+    window-format:              "{w} · {c} · {t}";
+    
+}
+
+/* ---- Load colors ---- */
+@theme "~/.config/rofi/colors.rasi"
+
+/* ---- Map colors ---- */
+* {
+	main: @color3l;
+	mainselected: @color4l;
+    border: @color6;
+    text: @color6;
+	background: @color1;
+	selectedtext: @color5;
+	urgent: #FF0000;
+}
+
+// Main //
+window {
+    height:                      600px;
+    width:                       800px;
+    transparency:                "real";
+    fullscreen:                  false;
+    enabled:                     true;
+    cursor:                      "default";
+    spacing:                     0em;
+    padding:                     0em;
+    border:                      3px;
+    border-color:                @border;
+    border-radius:               30px 5px 30px 5px;
+    background-color:            transparent;
+}
+
+mainbox {
+    enabled:                     true;
+    spacing:                     0em;
+    padding:                     0em;
+    orientation:                 vertical;
+    children:                    [ "inputbar" , "listbox" ];
+    background-color:            @background;
+}
+
+dummy {
+    expand:                      true;
+    background-color:            transparent;
+}
+
+// Inputs //
+inputbar {
+    enabled:                     true;
+    spacing:                     10px;
+    padding:                     100px 60px;
+    background-color:            transparent;
+	background-image:            url("~/.config/elg/cache/small_wallpaper.jpg", width);
+    text-color:                  @text;
+    orientation:                 horizontal;
+    children:                    [ "entry", "dummy", "mode-switcher" ];
+}
+
+textbox-prompt-colon {
+    enabled:                     true;
+    expand:                      false;
+    str:                         "";
+    padding:                     12px 15px;
+    border-radius:               15px 5px 15px 5px;
+    background-color:            @main;
+    text-color:                  inherit;
+    size:                        40px;
+}
+
+entry {
+    enabled:                     true;
+    expand:                      false;
+    width:                       250px;
+    padding:                     12px 16px;
+    border-radius:               5px 15px 5px 15px;
+    background-color:            @mainselected;
+    text-color:                  inherit;
+    cursor:                      text;
+    placeholder:                 "Search";
+    placeholder-color:           inherit;
+}
+
+// Lists //
+listbox {
+    spacing:                     2em;
+    padding:                     2em;
+    background-color:            transparent;
+    orientation:                 vertical;
+    border:                      2px 0px 0px 0px;
+    border-color:                @text;
+    children:                    [ "message", "listview" ];
+}
+
+listview {
+    enabled:                     true;
+    columns:                     2;
+    lines:                       6;
+    cycle:                       true;
+    dynamic:                     true;
+    scrollbar:                   false;
+    layout:                      vertical;
+    reverse:                     false;
+    fixed-height:                true;
+    fixed-columns:               true;
+    
+    spacing:                     10px;
+    background-color:            transparent;
+    text-color:                  @text;
+    cursor:                      "default";
+}
+
+// Modes //
+mode-switcher{
+    enabled:                     true;
+    spacing:                     10px;
+    background-color:            transparent;
+    text-color:                  @text;
+}
+button {
+    width:                       45px;
+    padding:                     12px;
+    border-radius:               15px 5px 15px 5px;
+    background-color:            @mainselected;
+    text-color:                  inherit;
+    cursor:                      pointer;
+}
+button selected {
+    background-color:            @main;
+    text-color:                  @selectedtext;
+}
+
+
+// Elements //
+element {
+    enabled:                     true;
+    spacing:                     10px;
+    padding:                     12px;
+    border-radius:               15px 5px 15px 5px;
+    background-color:            transparent;
+    text-color:                  @text;
+    cursor:                      pointer;
+}
+element normal.normal {
+    background-color:            inherit;
+    text-color:                  inherit;
+}
+element normal.urgent {
+    background-color:            @urgent;
+    text-color:                  @text;
+}
+element normal.active {
+    background-color:            @mainselected;
+    text-color:                  @selectedtext;
+}
+element selected.normal {
+    background-color:            @mainselected;
+    text-color:                  @selectedtext;
+}
+element selected.urgent {
+    background-color:            @urgent;
+    text-color:                  @text;
+}
+element selected.active {
+    background-color:            @main;
+    text-color:                  @text;
+}
+element-icon {
+    background-color:            transparent;
+    text-color:                  @selectedtext;
+    size:                        32px;
+    cursor:                      inherit;
+}
+element-text {
+    background-color:            transparent;
+    text-color:                  inherit;
+    cursor:                      inherit;
+    vertical-align:              0.5;
+    horizontal-align:            0.0;
+}
+textbox {
+	enabled:                     true;
+    text-color:                  @text;
+    background-color:            @background;
+    vertical-align:              0.5;
+    horizontal-align:            0.5;
+	highlight:                   none;
+}

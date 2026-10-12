@@ -1,0 +1,14 @@
+* {
+    color1: rgba(37,34,32,1.0);
+    color1l: rgba(37,34,32,0.75);
+    color2: rgba(74,55,49,1.0);
+    color2l: rgba(74,55,49,0.75);
+    color3: rgba(82,68,59,1.0);
+    color3l: rgba(82,68,59,0.75);
+    color4: rgba(62,65,64,1.0);
+    color4l: rgba(62,65,64,0.75);
+    color5: rgba(91,85,82,1.0);
+    color5l: rgba(91,85,82,0.75);
+    color6: rgba(158,137,128,1.0);
+    color6l: rgba(158,137,128,0.75);
+}

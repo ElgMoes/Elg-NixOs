@@ -1,0 +1,138 @@
+configuration {
+    show-icons:                 true;
+    hover-select:               true;
+    scroll-method:              0;
+    me-select-entry:            "";
+    me-accept-entry:            "MousePrimary";
+}
+
+/* ---- Load colors ---- */
+@theme "~/.config/rofi/colors.rasi"
+
+/* ---- Map colors ---- */
+* {
+	main: @color3l;
+	mainselected: transparent;
+    border: @color6;
+    text: @color6;
+	background: @color1;
+	selectedtext: #FFFFFF;
+	urgent: #FF0000;
+}
+
+// Main //
+window {
+    height:                      240px;
+    width:                       600px;
+    transparency:                "real";
+    fullscreen:                  false;
+    enabled:                     true;
+    cursor:                      "default";
+    spacing:                     0em;
+    padding:                     0em;
+    border:                      3px;
+    border-color:                @border;
+    border-radius:               30px 5px 30px 5px;
+    background-color:            transparent;
+    font: "JetBrains Mono 20";
+}
+
+mainbox {
+    enabled:                     true;
+    spacing:                     0em;
+    padding:                     0em;
+    orientation:                 vertical;
+    children:                    [ "listbox" ];
+    background-color:            @background;
+}
+
+dummy {
+    expand:                      true;
+    background-color:            transparent;
+}
+
+// Lists //
+listbox {
+    spacing:                     1em;
+    padding:                     1em;
+    background-color:            transparent;
+	background-image:            url("~/.config/elg/cache/blurred_wallpaper.jpg", width);
+    orientation:                 vertical;
+    border:                      2px 0px 0px 0px;
+    border-color:           @text;
+    children:                    [ "message", "listview" ];
+}
+
+listview {
+    enabled:                     true;
+    columns:                     2;
+    lines:                       2;
+    cycle:                       true;
+    dynamic:                     true;
+    scrollbar:                   false;
+    layout:                      vertical;
+    reverse:                     false;
+    fixed-height:                true;
+    fixed-columns:               true;
+    
+    spacing:                     10px;
+    background-color:            transparent;
+    text-color:                  @text;
+    cursor:                      "default";
+}
+
+// Elements //
+element {
+    enabled:                     true;
+    spacing:                     32px;
+    padding:                     12px;
+    border-radius:               15px 5px 15px 5px;
+    background-color:            transparent;
+    text-color:                  @text;
+    cursor:                      pointer;
+}
+element normal.normal {
+    background-color:            inherit;
+    text-color:                  inherit;
+}
+element normal.urgent {
+    background-color:            @urgent;
+    text-color:                  @text;
+}
+element normal.active {
+    background-color:            @mainselected;
+    text-color:                  @selectedtext;
+}
+element selected.normal {
+    background-color:            @mainselected;
+    text-color:                  @selectedtext;
+}
+element selected.urgent {
+    background-color:            @urgent;
+    text-color:                  @text;
+}
+element selected.active {
+    background-color:            @main;
+    text-color:                  @text;
+}
+element-icon {
+    background-color:            transparent;
+    text-color:                  @selectedtext;
+    size:                        32px;
+    cursor:                      inherit;
+}
+element-text {
+    background-color:            transparent;
+    text-color:                  inherit;
+    cursor:                      inherit;
+    vertical-align:              0.5;
+    horizontal-align:            0.0;
+}
+textbox {
+	enabled:                     true;
+    text-color:                  @text;
+    background-color:            @background;
+    vertical-align:              0.5;
+    horizontal-align:            0.5;
+	highlight:                   none;
+}

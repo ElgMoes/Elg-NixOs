@@ -117,7 +117,7 @@ hl.bind(mainMod .. " + CTRL + B", hl.dsp.exec_cmd("~/.config/waybar/launch.sh"))
 hl.bind(mainMod .. " + V", hl.dsp.exec_cmd(ELGSCRIPTS .. "/cliphist.sh"))
 hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("hyprlock"))
 hl.bind(mainMod .. " + Pause", hl.dsp.exec_cmd(ELGSCRIPTS .. "/powermenu.sh"))
-hl.bind(mainMod .. " + CTRL + W", hl.dsp.exec_cmd("kitty " .. ELGSCRIPTS .. "/wallpaper.sh"))
+--hl.bind(mainMod .. " + CTRL + W", hl.dsp.exec_cmd("kitty " .. ELGSCRIPTS .. "/wallpaper.sh"))
 
 local function toggleIntlVariant()
 	local current = hl.get_config("input.kb_variant")

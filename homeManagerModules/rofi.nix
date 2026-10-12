@@ -7,6 +7,7 @@
     home.packages = with pkgs; [
         rofi
         rofimoji
+        wtype
         ];
     xdg.configFile."rofi".source = ./config/rofi;
   };
