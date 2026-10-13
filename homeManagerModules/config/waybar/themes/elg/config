@@ -10,7 +10,7 @@
 {
     // General Settings
     "layer": "top",
-    "output": "DP-1",
+    "output": "!HDMI-A-1",
     "margin-top": 5,
     "margin-bottom": 0,
     "margin-left": 10,

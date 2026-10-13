@@ -14,6 +14,7 @@
       hyprpaper
       hyprpicker
       hyprshot
+      kitty
     ];
   };
 }

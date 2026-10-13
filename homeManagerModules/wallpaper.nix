@@ -14,6 +14,15 @@ let
     ''
       magick ${cfg.image} -resize 640x360\> -gaussian-blur 0x8 $out
     '';
+
+      wallpaperBlocks = lib.concatMapStrings (m: ''
+    wallpaper {
+        monitor = ${m}
+        path = ${cfg.image}
+        fit_mode = cover
+    }
+
+  '') cfg.monitors;
 in
 {
   options.elg.wallpaper = {
@@ -23,21 +32,21 @@ in
       default = ./wallpapers/Malenia.jpg;
       description = "Wallpaper used by hyprpaper and rofi";
     };
+    monitors = lib.mkOption {
+      type = lib.types.listOf lib.types.str;
+      default = [ "" ];
+      example = [ "DP-1" "HDMI-A-1" "Virtual-1"];
+      description = "Monitor names to set the wallpaper on";
+    };
   };
 
   config = lib.mkIf cfg.enable {
-    xdg.configFile."hypr/hyprpaper.conf".text = ''
-      wallpaper {
-          monitor =
-          path = ${cfg.image}
-          fit_mode = cover
-      }
-
+    xdg.configFile."hypr/hyprpaper.conf".text = wallpaperBlocks + ''
       ipc = true
       splash = false
     '';
 
-    xdg.configFile."elg/cache/current_wallpaper".text = "${cfg.image}\n";
+        xdg.configFile."elg/cache/current_wallpaper".text = "${cfg.image}\n";
     xdg.configFile."elg/cache/current_wallpaper.rasi".text = ''
       * { current-image: url(${cfg.image}, height); }
     '';
