@@ -4,7 +4,7 @@
   options.elg.kitty.enable = lib.mkEnableOption "Kitty terminal";
 
   config = lib.mkIf config.elg.kitty.enable {
-    home.packages = [ pkgs.kitty ];
+    home.packages = = with pkgs; [ kitty ];
     xdg.configFile."kitty".source = ../config/kitty;
   };
 }
