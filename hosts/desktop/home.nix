@@ -7,7 +7,7 @@
   elg.scripts.enable = true;
   elg.wallpaper.enable = true;
   elg.cliphist.enable = true;
-  elg.swanc.enable = true;
+  elg.swaync.enable = true;
 
   xdg.configFile."hypr/host".source = ./hypr;
 }

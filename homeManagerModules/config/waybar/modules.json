@@ -203,6 +203,5 @@
     "format": "{user}",
     "interval": 60,
     "icon": false
-  },
-  "scroll-step": 1
+  }
 }
