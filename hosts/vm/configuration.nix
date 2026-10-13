@@ -7,7 +7,7 @@
     ];
 
   # Users
-  users.users."no" = {
+  users.users."ElgMoes" = {
     isNormalUser = true;
     description = "no";
     extraGroups = [ "networkmanager" "wheel" ];
