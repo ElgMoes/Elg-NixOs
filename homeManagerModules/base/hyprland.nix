@@ -5,7 +5,7 @@
 
   config = lib.mkIf config.elg.hyprland.enable {
     xdg.configFile."hypr" = {
-      source = ./config/hypr;
+      source = ../config/hypr;
       recursive = true;
     };
     xdg.configFile."hypr/scripts".source = ./scripts/hypr;
@@ -14,7 +14,6 @@
       hyprpaper
       hyprpicker
       hyprshot
-      kitty
     ];
   };
 }

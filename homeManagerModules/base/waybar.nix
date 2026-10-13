@@ -11,6 +11,6 @@
       htop
       ncdu
     ];
-    xdg.configFile."waybar".source = ./config/waybar;
+    xdg.configFile."waybar".source = ../config/waybar;
   };
 }

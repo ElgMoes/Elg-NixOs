@@ -9,6 +9,6 @@
         rofimoji
         wtype
         ];
-    xdg.configFile."rofi".source = ./config/rofi;
+    xdg.configFile."rofi".source = ../config/rofi;
   };
 }

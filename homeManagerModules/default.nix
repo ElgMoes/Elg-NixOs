@@ -1,13 +1,9 @@
 # homeManagerModules/default.nix
 {
   imports = [
-    ./cliphist.nix
-    ./hyprland.nix
+    ./base
     ./scripts.nix
-    ./rofi.nix
     ./wallpaper.nix
-    ./waybar.nix
-    ./swaync.nix
     ./fonts.nix
   ];
 

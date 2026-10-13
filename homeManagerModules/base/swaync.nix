@@ -5,6 +5,6 @@
 
   config = lib.mkIf config.elg.swaync.enable {
     home.packages = [ pkgs.swaynotificationcenter ];
-    xdg.configFile."swaync".source = ./config/swaync;
+    xdg.configFile."swaync".source = ../config/swaync;
   };
 }
