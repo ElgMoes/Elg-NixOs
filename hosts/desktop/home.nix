@@ -10,4 +10,5 @@
   elg.swaync.enable = true;
 
   xdg.configFile."hypr/host".source = ./hypr;
+  elg.wallpaper.monitors = [ "DP-1" "HDMI-A-1" ];
 }
