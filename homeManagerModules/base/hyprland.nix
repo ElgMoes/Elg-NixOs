@@ -8,7 +8,7 @@
       source = ../config/hypr;
       recursive = true;
     };
-    xdg.configFile."hypr/scripts".source = ./scripts/hypr;
+    xdg.configFile."hypr/scripts".source = ../scripts/hypr;
 
     home.packages = with pkgs; [
       hyprpaper
