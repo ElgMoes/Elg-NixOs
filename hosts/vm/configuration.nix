@@ -9,8 +9,9 @@
   # Users
   users.users."ElgMoes" = {
     isNormalUser = true;
-    description = "no";
+    description = "ElgMoes";
     extraGroups = [ "networkmanager" "wheel" ];
+    initialPassword = "no";
     packages = with pkgs; [
     #  thunderbird
     ];
